@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "./page/Main";
+import TestResult from "./page/TestResult";
+import Test from "./page/Test";
+import NotFound from "./page/NotFound";
+
+export const baseURL = "http://localhost:5173";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        {/* 메인 썸네일 리스트 페이지 */}
+        <Route path="/" element={<Main />} />
+        {/* 테스트 intro-quiz-loading page */}
+        <Route path="/:testParam" element={<Test />} />
+        {/* 테스트 결과 페이지 */}
+        <Route
+          path="/:testParam/result/:resultParam"
+          element={<TestResult />}
+        />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
+
+//주소 체계
+//1. main 섬네일 리스트 페이지 : root/
+//2. 테스트 페이지 - Intro / Quiz / Loading : root/testName
+//3. 결과 페이지 - root/testName/result/resultName
