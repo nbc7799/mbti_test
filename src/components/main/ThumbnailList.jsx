@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { baseURL } from "../../App";
 
 export default function ThumbnailList() {
-  const [testList, setTestList] = useState(TESTS);
+  const [testList] = useState(TESTS);
   return (
     <div>
       {/* 해당 이미지 클릭시 해당 테스트 intro 페이지로 넘어가야함 */}
