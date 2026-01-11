@@ -1,3 +1,3 @@
 export default function LanguageIcons() {
-  return <div>LanguageIcons</div>;
+  return <div>LanguagesIcons</div>;
 }

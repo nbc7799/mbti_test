@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "./page/Main";
-import TestResult from "./page/TestResult";
-import Test from "./page/Test";
-import NotFound from "./page/NotFound";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Main from './page/Main';
+import TestResult from './page/TestResult';
+import Test from './page/Test';
+import NotFound from './page/NotFound';
 
-export const baseURL = "http://localhost:5173";
+export const baseURL = 'http://localhost:5173';
 
 function App() {
   return (
