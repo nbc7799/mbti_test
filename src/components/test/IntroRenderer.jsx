@@ -13,7 +13,7 @@ export default function IntroRenderer({ currentTest }) {
     T: 0,
     F: 0,
     J: 0,
-    p: 0,
+    P: 0,
   });
 
   const [mode, setMode] = useState('intro');
@@ -26,6 +26,7 @@ export default function IntroRenderer({ currentTest }) {
         setMode={setMode}
         questions={currentTest?.questions}
         setMbtiScore={setMbtiScore}
+        mbtiScore={mbtiScore}
       />
     );
   } else if (mode === 'loading') {
