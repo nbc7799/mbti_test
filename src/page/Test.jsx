@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { TESTS } from '../data/TESTS';
 import IntroRenderer from '../components/test/IntroRenderer';
@@ -6,17 +6,15 @@ import IntroRenderer from '../components/test/IntroRenderer';
 export default function Test() {
   const { testParam } = useParams();
   const navigate = useNavigate();
-  const [currentTest, setCurrentTest] = useState();
+
+  const currentTest = TESTS?.find((test) => test?.info?.mainUrl === testParam);
 
   useEffect(() => {
-    const theTest = TESTS?.find((test) => test?.info?.mainUrl === testParam);
-
-    if (!theTest) {
+    if (!currentTest) {
       alert('존재하지 않는 테스트입니다.');
-      return navigate('/');
+      navigate('/');
     }
-    setCurrentTest(theTest);
-  }, [testParam]);
+  }, [currentTest, navigate]);
 
   return (
     <div>
