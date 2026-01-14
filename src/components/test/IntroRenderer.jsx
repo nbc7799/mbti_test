@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Intro from './intro';
+import Intro from './Intro';
 import Quiz from './Quiz';
 import Loading from './Loading';
 
