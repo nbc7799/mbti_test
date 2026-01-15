@@ -4,7 +4,6 @@ import Quiz from './Quiz';
 import Loading from './Loading';
 
 export default function IntroRenderer({ currentTest }) {
-  //점수판
   const [mbtiScore, setMbtiScore] = useState({
     E: 0,
     I: 0,
@@ -26,11 +25,10 @@ export default function IntroRenderer({ currentTest }) {
         setMode={setMode}
         questions={currentTest?.questions}
         setMbtiScore={setMbtiScore}
-        mbtiScore={mbtiScore}
       />
     );
   } else if (mode === 'loading') {
-    return <Loading />;
+    return <Loading mbtiScore={mbtiScore} currentTest={currentTest} />;
   } else {
     return <div>잘못된 경로입니다.</div>;
   }
