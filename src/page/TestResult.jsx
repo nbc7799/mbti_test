@@ -5,6 +5,7 @@ import ShareButtonGroup from '../components/testResult/ShareButtonGroup';
 import TestResultRenderer from '../components/testResult/TestResultRenderer';
 import { TESTS } from '../data/TESTS';
 import { useMemo } from 'react';
+import styles from './testResult.module.css';
 
 export default function TestResult() {
   const { testParam, resultParam } = useParams();
@@ -28,7 +29,7 @@ export default function TestResult() {
   }
 
   return (
-    <div>
+    <div className={styles.testResult}>
       <TestResultRenderer renderResultInfo={resultInfo} />
       <ShareButtonGroup
         testParam={testParam}
