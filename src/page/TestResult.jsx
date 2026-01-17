@@ -30,7 +30,11 @@ export default function TestResult() {
   return (
     <div>
       <TestResultRenderer renderResultInfo={resultInfo} />
-      <ShareButtonGroup />
+      <ShareButtonGroup
+        testParam={testParam}
+        resultParam={resultParam}
+        testInfo={testInfo}
+      />
       <ResultButtonGroup />
       <ResultThumbnailList />
     </div>
