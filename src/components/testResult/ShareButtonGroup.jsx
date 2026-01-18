@@ -6,17 +6,9 @@ import {
 } from 'react-share';
 import { baseURL } from '../../App';
 import styles from './shareButtonGroup.module.css';
+import { linkCopy } from '../../tools/tools';
 
 export default function ShareButtonGroup({ testParam, resultParam, testInfo }) {
-  const handleCopy = async (text) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      alert('복사되었습니다!');
-    } catch (err) {
-      console.error('복사 실패:', err);
-    }
-  };
-
   return (
     <div className={styles.shareContainer}>
       <h3>친구에게 공유하기</h3>
@@ -37,7 +29,7 @@ export default function ShareButtonGroup({ testParam, resultParam, testInfo }) {
         <button
           className={styles.urlShareButton}
           onClick={() => {
-            handleCopy(`${baseURL}/${testParam}/result/${resultParam}`);
+            linkCopy();
           }}
         >
           URL
