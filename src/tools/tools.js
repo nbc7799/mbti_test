@@ -14,3 +14,12 @@ export function arrayShuffler(array) {
 
   return array;
 }
+
+export const linkCopy = async () => {
+  try {
+    await navigator.clipboard.writeText(window.location.href);
+    alert('복사되었습니다!');
+  } catch (err) {
+    console.error('복사 실패:', err);
+  }
+};
