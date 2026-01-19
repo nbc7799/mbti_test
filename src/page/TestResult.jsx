@@ -37,7 +37,7 @@ export default function TestResult() {
         testInfo={testInfo}
       />
       <ResultButtonGroup testParam={testParam} />
-      <ResultThumbnailList />
+      <ResultThumbnailList testParam={testParam} />
     </div>
   );
 }
