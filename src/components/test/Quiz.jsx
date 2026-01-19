@@ -44,6 +44,9 @@ export default function Quiz({ setMode, questions, setMbtiScore }) {
         percent={(questionNum / totalQuestionsLength) * 100}
         showInfo={false}
       />
+      <h5>
+        {questionNum} / {questions.length}
+      </h5>
     </div>
   );
 }
